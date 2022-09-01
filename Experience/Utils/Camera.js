@@ -7,15 +7,21 @@ export default class Camera {
     this.sizes = this.model.sizes;
     this.scene = this.model.scene;
     this.canvas = this.model.canvas;
-    // console.log(this.model,this.sizes,this.scene, this.canvas)
+    console.log(this.canvas, this.scene)
 
     this.createPerspectiveCamera();
     this.createOrthographicCamera();
   }
 
   createPerspectiveCamera() {
-    this.perspectiveCamera = new THREE.PerspectiveCamera(35, this.sizes.aspect,0.1,1000)
+    this.perspectiveCamera = new THREE.PerspectiveCamera(
+      35,
+      this.sizes.aspect,
+      0.1,
+      1000
+      )
     this.scene.add(this.perspectiveCamera);
+    this.perspectiveCamera.position.z = 5
   }
 
   createOrthographicCamera() {

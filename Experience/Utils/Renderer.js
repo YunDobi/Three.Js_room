@@ -9,7 +9,7 @@ export default class Renderer {
     this.canvas = this.model.canvas;
     this.camera = this.model.camera;
 
-    console.log(this.camera, this.camera.perspectiveCamera)
+    console.log(this.camera, this.camera.perspectiveCamera, this.canvas)
 
     this.setRenderer();
   }
@@ -35,7 +35,7 @@ export default class Renderer {
   }
 
   update() {
-    this.renderer.render(this.scene, this,this.camera.perspectiveCamera)
+    this.renderer.render(this.scene, this.camera.perspectiveCamera)
   }
 
 }

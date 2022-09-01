@@ -4,6 +4,8 @@ import Camera from "./Utils/Camera";
 import Renderer from "./Utils/Renderer";
 import Time from "./Utils/Time";
 
+import World from "./World/world";
+
 export default class Models {
 	static instance
   constructor(canvas) {
@@ -13,16 +15,18 @@ export default class Models {
 		Models.instance = this;
     this.canvas = canvas;
 		this.scene = new THREE.Scene();
-		this.time = new Time();
 		this.sizes = new Sizes();
+		this.time = new Time();
 		this.camera = new Camera();
 		this.renderer = new Renderer();
+		this.world = new World();
+		// console.log(this.canvas)
 
-		this.time.emit("update", () => {
+		this.time.on("update", () => {
 			this.update();
 		})
 
-		this.sizes.emit("resize", () => {
+		this.sizes.on("resize", () => {
 			this.resize();
 		})
   }
