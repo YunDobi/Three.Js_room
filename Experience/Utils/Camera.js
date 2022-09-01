@@ -7,7 +7,7 @@ export default class Camera {
     this.sizes = this.model.sizes;
     this.scene = this.model.scene;
     this.canvas = this.model.canvas;
-    console.log(this.canvas, this.scene)
+    // console.log(this.canvas, this.scene)
 
     this.createPerspectiveCamera();
     this.createOrthographicCamera();
