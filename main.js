@@ -1,4 +1,4 @@
 import './style.css'
-import Experience from './Experience/experience';
+import Models from './Experience/Models';
 
-const experience = new Experience(document.querySelector(".experience-canvas"))
+const model = new Models(document.querySelector(".experience-canvas"))
