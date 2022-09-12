@@ -1,7 +1,7 @@
 import Models from "../Models";
 import * as THREE from "three";
 
-export default class Room {
+export default class Environment {
   constructor() {
     this.model = new Models();
     this.scene = this.model.scene;
@@ -9,19 +9,11 @@ export default class Room {
     this.room = this.resources.items.shiba;
     this.actualRoom = this.room.scene;
 
-    this.setModel();
+    this.setSunlight();
   }
 
-  setModel() {
-    this.scene.add(this.actualRoom);
-  }
-
-
-  resize() {
-
-  }
-
-  update() {
+  setSunlight() {
+    this.sunLight
   }
 
 }

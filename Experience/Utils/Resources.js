@@ -1,14 +1,17 @@
+import Models from "../Models";
 import { EventEmitter } from "events";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader.js"
-import {DRACOLoader} from "three/examples/jsm/loaders/DRACOLoader"
 
 export default class Resources extends EventEmitter {
   constructor(assets) {
     super();
 
+    this.models = new Models();
+    this.renderer = this.models.renderer;
     this.assets = assets;
+    console.log(this.assets)
 
-    this.item = {};
+    this.items = {};
     this.queue = this.assets.length;
     this.loaded = 0;
 
@@ -20,17 +23,14 @@ export default class Resources extends EventEmitter {
   setLoader() {
     this.loaders = {};
     this.loaders.gltfLoader = new GLTFLoader();
-    // this.loaders.dracoLoader = new DRACOLoader();
-    // this.loaders.dracoLoader.setDecoderPath("/draco/");
-    // this.loaders.gltfLoader.setDRACOLoader(this.loaders.dracoLoader)
-
+    // console.log(this.loaders)
   }
 
   startLoading() {
     for (const asset of this.assets) {
-      console.log(asset)
+      // console.log("start",asset)
       if (asset.type === "gltfModels") {
-        this.loaders.gltfLoader.load(asset.path,(file) => {
+        this.loaders.gltfLoader.load(asset.path, (file) => {
           this.singleAssetLoader(asset, file)
         })
       }
@@ -38,9 +38,8 @@ export default class Resources extends EventEmitter {
   }
 
   singleAssetLoader(asset, file) {
-    this.item[asset.name] = file;
+    this.items[asset.name] = file;
     this.loaded ++;
-    console.log(file)
     if (this.loaded === this.queue) {
       this.emit("ready");
     }
