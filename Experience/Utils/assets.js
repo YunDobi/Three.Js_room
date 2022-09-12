@@ -1,12 +1,7 @@
 export default [
   {
-    name: "room",
+    name: "shiba",
     type: "gltfModels",
-    path: "/low_poly_room/scene.gltf"
-  },
-  {
-    name: "picture",
-    type: "pngTexture",
-    path: "/textures/UberTexture_baseColor.png"
+    path: "/shiba/scene.gltf"
   }
 ]

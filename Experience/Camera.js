@@ -1,5 +1,6 @@
-import Models from "../Models";
+import Models from "./Models";
 import * as THREE from "three";
+import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
 export default class Camera {
   constructor() {
@@ -11,6 +12,7 @@ export default class Camera {
 
     this.createPerspectiveCamera();
     this.createOrthographicCamera();
+    this.setOrbicontrol();
   }
 
   createPerspectiveCamera() {
@@ -35,6 +37,10 @@ export default class Camera {
       100
     );
     this.scene.add(this.OrthographicCamera);
+  }
+
+  setOrbicontrol() {
+    this.controls = new OrbitControls(this.perspectiveCamera, this.canvas)
   }
 
   resize() {

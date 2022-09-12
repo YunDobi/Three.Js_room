@@ -9,8 +9,12 @@ export default class World {
     this.scene = this.model.scene;
     this.canvas = this.model.canvas;
     this.camera = this.model.camera;
+    this.resources = this.model.resources;
 
-    this.room = new Room();
+    this.resources.on("ready", () => {
+      this.room = new Room();
+    })
+
 
   }
 

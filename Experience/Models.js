@@ -1,9 +1,11 @@
 import * as THREE from "three"
+
 import Sizes from "./Utils/Sizes";
-import Camera from "./Utils/Camera";
-import Renderer from "./Utils/Renderer";
 import Time from "./Utils/Time";
 import Resources from "./Utils/Resources";
+
+import Camera from "./Camera";
+import Renderer from "./Renderer";
 
 import World from "./World/world";
 import assets from "./Utils/assets";
