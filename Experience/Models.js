@@ -26,6 +26,7 @@ export default class Models {
 		this.resources = new Resources(assets);
 		this.world = new World();
 		// console.log(this.canvas)
+		this.scene.background = new THREE.Color("#ffffff");
 
 		this.time.on("update", () => {
 			this.update();
