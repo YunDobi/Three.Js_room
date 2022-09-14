@@ -14,6 +14,8 @@ export default class Room {
 
   setModel() {
     this.scene.add(this.actualRoom);
+    this.actualRoom.scale.set(1.5,1.5,1.5)
+    console.log(this.actualRoom)
   }
 
 

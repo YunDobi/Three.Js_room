@@ -22,12 +22,13 @@ export default class Camera {
       0.1,
       1000
       )
+      let yheight = 0;
     this.scene.add(this.perspectiveCamera);
-    this.perspectiveCamera.position.z = 5
+    this.perspectiveCamera.position.set(0, yheight, 5)
   }
 
   createOrthographicCamera() {
-    this.frustrum = 5;
+    this.frustrum =5;
     this.OrthographicCamera = new THREE.OrthographicCamera(
       (-this.sizes.aspect * this.sizes.frustrum) /2,
       (this.sizes.aspect * this.sizes.frustrum) /2,
