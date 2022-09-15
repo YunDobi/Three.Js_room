@@ -1,2 +1,4 @@
 ## Room ##
-3d modeling is from StackFab by IsaacTheMaverick (https://sketchfab.com/3d-models/low-poly-room-a6bf7976f3ac401e96907aa5b8a0c1c1)
+3d modeling is from StackFab (https://sketchfab.com/3d-models/shiba-faef9fe5ace445e7b2989d1c1ece361c)
+
+## ScreenShot

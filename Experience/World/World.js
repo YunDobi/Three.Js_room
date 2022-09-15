@@ -18,7 +18,6 @@ export default class World {
 
   }
 
-
   resize() {
 
   }

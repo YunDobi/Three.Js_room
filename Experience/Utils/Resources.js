@@ -32,6 +32,12 @@ export default class Resources extends EventEmitter {
       if (asset.type === "gltfModels") {
         this.loaders.gltfLoader.load(asset.path, (file) => {
           this.singleAssetLoader(asset, file)
+
+          function animate() {
+            requestAnimationFrame(animate)
+            file.scene.rotation.y -=  0.001
+          }
+          animate();
         })
       }
     }

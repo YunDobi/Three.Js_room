@@ -57,3 +57,15 @@ html, body {
   top: calc(50% - 160px);
   right: 160px;
 }
+
+.hero-main-title {
+  font-size: 54px;
+}
+.hero-main-description {
+  font-size: 18px;
+}
+
+.hero-second-body {
+  font-size: 24px;
+  text-transform: uppercase;
+}
