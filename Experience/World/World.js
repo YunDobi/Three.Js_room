@@ -1,6 +1,8 @@
 import Models from "../Models";
-import * as THREE from "three";
+// import * as THREE from "three";
 import Room from "./Room";
+import gsap from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 export default class World {
   constructor() {
@@ -11,10 +13,18 @@ export default class World {
     this.camera = this.model.camera;
     this.resources = this.model.resources;
 
+    gsap.registerPlugin(ScrollTrigger);
+    this.setpath();
+
     this.resources.on("ready", () => {
       this.room = new Room();
     })
 
+
+  }
+
+  setpath {
+    this.timeline = new gsap.timeline;
 
   }
 
